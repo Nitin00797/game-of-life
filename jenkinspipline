@@ -6,7 +6,9 @@ pipeline {
     stages ('first stage') {
         stage ('first step') {
             steps ('first step') {
-                mvn 'clean package'
+                sh 'pwd'
+                sh 'mvn clean package'
+
         }
      }
    }
