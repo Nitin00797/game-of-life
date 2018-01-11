@@ -1,14 +1,11 @@
 pipeline {
     agent {
-            docker {
-                image 'maven:3-alpine'
-                args '-v /root/.m2:/root/.m2'
-                args '-u root:sudo -v /var/lib/jenkins/workspace/game-of-life-pipe:/game-of-life-pipe'
-                }
-          }
+        label 'master'
+    }
     stages {
           stage('Build') {
                         steps {
+                           sh 'sudo docker pull maven:3-alpine'
                            sh 'mvn -B -DskipTests clean package'
                             }
                         }
