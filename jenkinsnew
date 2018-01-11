@@ -3,6 +3,7 @@ pipeline {
             docker {
                 image 'maven:3-alpine'
                 args '-v /root/.m2:/root/.m2'
+                args '-u root:sudo -v /var/lib/jenkins/workspace/game-of-life-pipe:/game-of-life-pipe'
                 }
           }
     stages {
