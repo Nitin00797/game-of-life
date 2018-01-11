@@ -8,5 +8,6 @@ pipeline {
             steps ('first step') {
                 mvn 'clean package'
         }
-    }
+     }
+   }
 }
